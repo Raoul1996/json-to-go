@@ -217,8 +217,8 @@ function jsonToGo(json, typename, flatten = true)
 				append(typename+" ");
 				parent = typename
 				parseScope(scope[keys[i]], depth);
-				append(' `json:"'+keyname);
-				if (omitempty && omitempty[keys[i]] === true)
+        appender(' `json:"'+keyname+'" db:"'+keyname);
+        if (omitempty && omitempty[keys[i]] === true)
 				{
 					append(',omitempty');
 				}
@@ -322,9 +322,9 @@ function jsonToGo(json, typename, flatten = true)
 	{
 		// https://github.com/golang/lint/blob/5614ed5bae6fb75893070bdc0996a68765fdd275/lint.go#L771-L810
 		const commonInitialisms = [
-			"ACL", "API", "ASCII", "CPU", "CSS", "DNS", "EOF", "GUID", "HTML", "HTTP", 
-			"HTTPS", "ID", "IP", "JSON", "LHS", "QPS", "RAM", "RHS", "RPC", "SLA", 
-			"SMTP", "SQL", "SSH", "TCP", "TLS", "TTL", "UDP", "UI", "UID", "UUID", 
+			"ACL", "API", "ASCII", "CPU", "CSS", "DNS", "EOF", "GUID", "HTML", "HTTP",
+			"HTTPS", "ID", "IP", "JSON", "LHS", "QPS", "RAM", "RHS", "RPC", "SLA",
+			"SMTP", "SQL", "SSH", "TCP", "TLS", "TTL", "UDP", "UI", "UID", "UUID",
 			"URI", "URL", "UTF8", "VM", "XML", "XMPP", "XSRF", "XSS"
 		];
 
